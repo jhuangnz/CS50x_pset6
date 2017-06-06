@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+##
+#   Implement a program that categorizes a user’s tweets as positive or negative.
+# 
+#   Author: Julie Huang, julie@juliehuang.co.nz
+#  
+#   This file contains a solution for part 2 of 'Sentiments' from pset6
+# 
+#   CS50x
+
+import sys
+import os
+import nltk
+from helpers import get_user_timeline
+from analyzer import Analyzer
+from termcolor import colored
+
+def main():
+    
+    # ensure proper usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets screen_name")
+    
+    screen_name = sys.argv[1]  # initialize screen_name
+    
+    tweets = get_user_timeline(screen_name, count=50)  # fetch last 50 tweets of user
+    if tweets == None:
+        sys.exit("Retrieving tweets unsuccessful")  # exit if fetch unsuccessful
+    else:
+        positives = os.path.join(sys.path[0], "positive-words.txt")  # directory path for positives
+        negatives = os.path.join(sys.path[0], "negative-words.txt")  # directory path for negatives
+        
+        analyzer = Analyzer(positives, negatives)  # instantiate Analyzer
+        
+        for tweet in tweets:  # for fetched tweets:
+            score = analyzer.analyze(tweet)  # analyze tweet to get its score
+            
+            if score > 0:
+                print(colored("{:2} {}".format(score, tweet), "green"))  # tweet is positive, print tweet and score in green
+            elif score < 0:
+                print(colored("{:2} {}".format(score, tweet), "red"))  # tweet is negative, print tweet and score in red
+            else:
+                print(colored("{:2} {}".format(score, tweet), "yellow"))  # tweet is neutral, print tweet and score in yellow
+        
+if __name__ == "__main__":
+    main()
