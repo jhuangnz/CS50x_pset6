@@ -1,0 +1,4 @@
+INSTRUCTIONS:
+
+1) $ export API keys
+2) $ flask run
