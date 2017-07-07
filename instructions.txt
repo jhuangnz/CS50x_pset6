@@ -1,0 +1,13 @@
+INSTRUCTIONS:
+
+1) In terminal:
+   $ export API_KEY=JCkzoH6kRi4vx1s6dBZwxh1wE
+   $ export API_SECRET=SeQm4c2SwVQHKgnVpxmuOIKnEQD6Z8pHypo6aONMtsGrXDV83d
+   $ flask run
+   
+3) CS50 IDE > Web Server (top left corner of menu bar)
+   This will open up a new tab with app.
+   
+4) In app:
+   Search for twitter handle.
+   If handle is invalid or private, a NoneType error will be thrown.
