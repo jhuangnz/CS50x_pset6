@@ -1,4 +1,3 @@
-# CS50x_pset6
 Author: Julie Huang, julie@juliehuang.co.nz
 
 The following files are solutions for pset6 of CS50x, written in Python.
