@@ -1,8 +1,8 @@
 INSTRUCTIONS:
 
 1) In terminal:
-   $ export API_KEY=JCkzoH6kRi4vx1s6dBZwxh1wE
-   $ export API_SECRET=SeQm4c2SwVQHKgnVpxmuOIKnEQD6Z8pHypo6aONMtsGrXDV83d
+   $ export API_KEY
+   $ export API_SECRET
    $ flask run
    
 3) CS50 IDE > Web Server (top left corner of menu bar)
